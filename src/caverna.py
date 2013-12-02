@@ -65,15 +65,20 @@ class Tunel:
     """Um tunel da caverna que liga camaras :ref:'tunel'
     """
     def __init__(self, html, nome , lugar):
-        """Inicia a camara"""
-        self.html, self.nome, self.lugar = html, nome, lugar
-        self.passagem = self.div = None
+        """Inicia o tunel"""
+        self.html, self.nome = html, nome
+        self.lugar, self.saida = lugar, saida
+        self.entrada = self.passagem = self.div = None
         self.tunel = {}
 
     def cria_tunel(self):
         """Cria a tunel e suas partes"""
-        self.div = self.html.DIV()
-        self.passagem = self.html.DIV()
+        self.div = self.html.DIV(Id=self.nome)
+        self.passagem = self.html.DIV(Id='passa_'+self.nome)
+        self.entrada = self.html.DIV(Id='entra_'+self.nome,
+                                     width="33.33%"
+        )
+        self.saida <= self.entrada
         self.div.style.backgroundSize = 'cover'
         self.div.style.backgroundImage = 'url(%s)' % CAVEZ
         self.div.style.widht = 1000
