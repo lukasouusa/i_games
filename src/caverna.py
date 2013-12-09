@@ -93,7 +93,7 @@ class Tunel:
         print(ev.target.Id)
         self.caverna.movimenta(self.lugar)
 
-        def cria_saida(self):
+    def cria_saida(self):
         """Cria uma saida deste tunel"""
         estilo = dict(
             width="50%", height=300, Float='left')
