@@ -66,7 +66,7 @@ class Camara:
         self.div.style.backgroundImage = 'url(%s)' % CAVEX
         self.div.style.width = 1000
         self.div.style.height = 800
-        self.div.text = "Welcome"
+        self.div.text = "Caverna Supermassive Blackhole"
         self.div <= self.passagem
         self.lugar.main <= self.div
         return self
@@ -93,7 +93,9 @@ class Tunel:
     def cria_saida(self):
         """Cria uma saida desse tunel"""
         estilo = dict(width="50%", height=700, Float='left')
-        self.entrada_camara = self.html.DIV(Id='entra_'+self.nome, style=estilo)
+        self.entrada_camara = self.html.DIV(
+            Id='entra_'+self.nome, style=estilo
+        )
         self.entrada_camara.onclick = self.sai_tunel
         self.passagem <= self.entrada_camara
 
@@ -101,15 +103,18 @@ class Tunel:
         """Cria o tunel e suas partes."""
         self.div = self.html.DIV(Id=self.nome)
         self.passagem = self.html.DIV(Id='passa_'+self.nome)
-        estilo = dict(width="33.33%", height=700, Float='left')
-        self.entrada = self.html.DIV(Id='entra_'+self.nome, style=estilo)
+        estilo = dict(
+            width="33.33%", height=700, Float='left')
+        self.entrada = self.html.DIV(
+            Id='entra_'+self.nome, style=estilo
+        )
         self.entrada.onclick = self.movimenta
         self.saida <= self.entrada
         self.div.style.backgroundSize = 'cover'
         self.div.style.backgroundImage = 'url(%s)' % CAVEZ
         self.div.style.width = 1000
         self.div.style.height = 800
-        self.div.text = "Esse é o tunel!"
+        self.div.text = "Caverna Supermassive Blackhole"
         self.div <= self.passagem
         self.cria_saida()
         return self
